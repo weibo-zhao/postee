@@ -124,7 +124,7 @@ render_vlnrb(severity, list) = "" {  #returns empty string if list of vulnerabil
 }
 
 ##########################Jira Ticket Content#################################################################################
-title:=sprintf("Trivy Operator %s Report for - %s", [input.kind, input.metadata.name])
+title:=sprintf("Trivy Operator VulnerabilityReport for Image %s:%s", [input.report.artifact.repository, input.report.artifact.tag])
 
 result = msg {
 
