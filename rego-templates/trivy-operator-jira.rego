@@ -9,6 +9,11 @@ h1. Image Metadata
 ||Name||Namespace||CreationTimestamp||Registry||Repository||Tag||
 | %s | %s | %s | %s | %s | %s |
 
+h1. Resource Information
+
+||Used By Pod||Container Name||Resource Kind||
+| %s | %s | %s |
+
 h1. Vulnerability Summary
 ||CRITICAL||HIGH||MEDIUM||LOW||UNKNOWN||NONE||
 | %d | %d | %d | %d | %d | %d |
@@ -135,6 +140,9 @@ result = msg {
     input.report.registry.server,
     input.report.artifact.repository,
     input.report.artifact.tag,
+    input.metadata.labels.trivy-operator.resource.name,
+    input.metadata.labels.trivy-operator.container.name,
+    input.metadata.labels.trivy-operator.resource.kind,
     input.report.summary.criticalCount,
     input.report.summary.highCount,
     input.report.summary.mediumCount,
